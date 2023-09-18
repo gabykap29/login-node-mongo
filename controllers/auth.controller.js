@@ -58,7 +58,7 @@ authCtrl.login = async (req,res)=>{
             return res.status(401).json({message:'Usuario o Contraseña incorrectos!'})
         }; 
         const token = await generarJWT(userId);
-        localStorage.setItem('token',token)
+        // localStorage.setItem('token',token)
         return res.status(200).json({token, message:'Iniciaste correctamente!'})
     } catch (error) {
         console.log(error);
