@@ -222,6 +222,48 @@ let nombresHombres = [
     5: [56000000, 56999999],
     4: [56000000, 56555555],
   };
+
+
+
+const comunicacionArteYdiseño = [
+    "Introducción al Diseño Gráfico",
+    "Teoría de la Comunicación",
+    "Fundamentos del Arte y la Estética",
+    "Diseño de Comunicación Visual",
+    "Fotografía y Comunicación Visual",
+    "Medios Digitales y Diseño Interactivo",
+    "Ilustración y Técnicas de Dibujo",
+    "Diseño de Medios Impresos",
+    "Diseño de Identidad Corporativa",
+    "Diseño de Packaging y Envases"
+]
+
+
+const maestroMayorDeObras = [
+    "Construcción y Tecnología de Materiales",
+    "Planificación y Programación de Obras",
+    "Normativas y Regulaciones en la Construcción",
+    "Gestión de Proyectos de Construcción",
+    "Interpretación de Planos y Diseños Arquitectónicos",
+    "Topografía y Nivelación",
+    "Control de Costos y Presupuestos de Obras",
+    "Seguridad en la Construcción",
+    "Dirección de Equipos y Trabajadores de Obra",
+    "Sistemas de Instalaciones en la Construcción (Electricidad, Plomería)"
+]
+
+const tecnicoEnInformaticaProfesionalYpersonal = [
+    "Fundamentos de la Informática",
+    "Programación y Desarrollo de Software",
+    "Redes de Computadoras",
+    "Sistemas Operativos",
+    "Administración de Bases de Datos",
+    "Seguridad Informática",
+    "Diseño y Desarrollo Web",
+    "Soporte Técnico y Mantenimiento de Hardware",
+    "Introducción a la Inteligencia Artificial",
+    "Ética y Legislación en Tecnología de la Información"
+]
   
   let codNivelEducativo = [{inicial:101},{primaria:102},{secundaria:110},{superior:115}];
   
