@@ -163,6 +163,28 @@ let nombresHombres = [
     "Formación Ética y Ciudadana"
   ]
   
+function primariaMaterias(){
+  let arrayMaterias = []
+  let materiaExistente = [];
+  for(let i = 0; i < 5;i++){
+  let numMateria = Math.floor(Math.random()*8);
+  if(materiaExistente.includes(materiasPrimaria[numMateria])){
+    i--
+  }else{
+    materiaExistente.push(materiasPrimaria[numMateria]);
+    arrayMaterias.push(materiasPrimaria[numMateria]);
+    let primer = (Math.floor(Math.random() * 10) + 1);
+    let segundo = (Math.floor(Math.random() * 10) + 1);
+    let final = (Math.floor(Math.random() * 10) + 1);
+    let promedio = parseInt((primer + segundo + final) / 3);
+    arrayMaterias.push(primer,segundo,final,promedio)
+    alumno.materia.push(arrayMaterias)
+  }
+  }
+  return console.log(alumno.materia);
+}
+
+
   const materiasSecundaria = [
   "Lengua",
   "Matemática",
@@ -348,6 +370,89 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
     return fechaAleatoria;
   }
   
+  let especialidad = [null,"comunicacionArteYdiseño",
+    "maestroMayorDeObras",
+    "tecnicoEnInformaticaProfesionalYpersonal"]
+  
+
+ 
+  function secundariaMaterias(){
+    let especialidadElegida = Math.floor(Math.random()*3)+1;
+    switch(especialidadElegida){
+      case 1 :{
+        //especialidad comunicacionArteYdiseño
+        for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
+          let materiaExistente = [];
+          arrayMaterias.push(especialidad[especialidadElegida]);
+          let numMateria = Math.floor(Math.random()*8);
+          if(materiaExistente.includes(comunicacionArteYdiseño[numMateria])){
+            i--
+          }else{
+            materiaExistente.push(comunicacionArteYdiseño[numMateria]);
+            arrayMaterias.push(comunicacionArteYdiseño[numMateria]);
+            let primer = (Math.floor(Math.random() * 10) + 1);
+            let segundo = (Math.floor(Math.random() * 10) + 1);
+            let final = (Math.floor(Math.random() * 10) + 1);
+            let promedio = parseInt((primer + segundo + final) / 3);
+            arrayMaterias.push(primer,segundo,final,promedio)
+            alumno.materia.push(arrayMaterias)
+          }
+          }
+          console.log('Se ejecutó esto 1');
+          break
+      }
+      case 2:{
+       //especialidad maestroMayorDeObras 
+        for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
+          let materiaExistente = [];
+          arrayMaterias.push(especialidad[especialidadElegida]);
+          let numMateria = Math.floor(Math.random()*8);
+          if(materiaExistente.includes(maestroMayorDeObras[numMateria])){
+            i--
+          }else{
+            materiaExistente.push(maestroMayorDeObras[numMateria]);
+            arrayMaterias.push(maestroMayorDeObras[numMateria]);
+            let primer = (Math.floor(Math.random() * 10) + 1);
+            let segundo = (Math.floor(Math.random() * 10) + 1);
+            let final = (Math.floor(Math.random() * 10) + 1);
+            let promedio = parseInt((primer + segundo + final) / 3);
+            arrayMaterias.push(primer,segundo,final,promedio)
+            alumno.materia.push(arrayMaterias)
+          }
+          }
+          console.log('Se ejecutó esto 2');
+          break;
+      } 
+      case 3:{
+        //especialidad tecnicoEnInformaticaProfesionalYpersonal
+        for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
+          let materiaExistente = [];
+          arrayMaterias.push(especialidad[especialidadElegida]);
+          let numMateria = Math.floor(Math.random()*8);
+          if(materiaExistente.includes(tecnicoEnInformaticaProfesionalYpersonal[numMateria])){
+            i--
+          }else{
+            materiaExistente.push(tecnicoEnInformaticaProfesionalYpersonal[numMateria]);
+            arrayMaterias.push(tecnicoEnInformaticaProfesionalYpersonal[numMateria]);
+            let primer = (Math.floor(Math.random() * 10) + 1);
+            let segundo = (Math.floor(Math.random() * 10) + 1);
+            let final = (Math.floor(Math.random() * 10) + 1);
+            let promedio = parseInt((primer + segundo + final) / 3);
+            arrayMaterias.push(primer,segundo,final,promedio)
+            alumno.materia.push(arrayMaterias)
+          }
+          }
+          console.log('Se ejecutó esto 3');
+          break;
+      }
+    }
+  }
+
+
+
   function crearAlumno(){
       let num = Math.floor(Math.random()*3);
       alumno.codNivelEducativo = codNivelEducativo[num];
@@ -378,7 +483,7 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
           alumno.domicilio = barriosFormosa[Math.floor(Math.random()*20)];
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date('2023-03-03');
-          alumno.materia = [];
+          alumno.materia.push(secundariaMaterias());
           alumno.tutor = [{
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,
@@ -394,7 +499,7 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
           alumno.domicilio = barriosFormosa[Math.floor(Math.random()*20)];
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date('2023-03-03');
-          alumno.materia = [];
+          alumno.materia.push(secundariaMaterias());
           alumno.tutor = [{
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,
@@ -410,7 +515,7 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
             alumno.domicilio = barriosFormosa[Math.floor(Math.random()*20)];
             alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
             alumno.fechaIngreso = new Date('2023-03-03');
-            alumno.materia = [];
+            alumno.materia.push(secundariaMaterias());
             alumno.tutor = [{
               nombre: nombresHombres[Math.floor(Math.random()*49)],
               apellido: alumno.apellido,
