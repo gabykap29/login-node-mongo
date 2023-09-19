@@ -1,6 +1,3 @@
-let arrayMaterias = []
-
-
 let nombresHombres = [
     "Juan",
     "Carlos",
@@ -155,39 +152,43 @@ let nombresHombres = [
     "Araya",
     "Cortés"
   ];
-  const materiasPrimaria = [
-    "Lengua y literatura",
-    "Matemáticas",
-    "Ciencias Sociales",
-    "Ciencias Naturales",
-    "Educación Artística",
-    "Educación Física",
-    "Educación Tecnológica",
-    "Formación Ética y Ciudadana"
-  ]
+
   
-function primariaMaterias(){
-  let arrayMaterias = []
-  let materiaExistente = [];
-  for(let i = 0; i < 5;i++){
-    if(arrayMaterias.length > 5){
-      arrayMaterias.splice(0);
+  function primariaMaterias() {
+
+    let materiasPrimaria = [
+      "Lengua y literatura",
+      "Matemáticas",
+      "Ciencias Sociales",
+      "Ciencias Naturales",
+      "Educación Artística",
+      "Educación Física",
+      "Educación Tecnológica",
+      "Formación Ética y Ciudadana"
+    ]
+    let arrayMaterias = []
+    for (let i = 0; i < 5; i++) {
+      if(arrayMaterias.length =5){
+        arrayMaterias = []
+      }
+      let nombre = materiasPrimaria[i];
+      let primer = Math.floor(Math.random() * 10) + 1;
+      let segundo = Math.floor(Math.random() * 10) + 1;
+      let final = Math.floor(Math.random() * 10) + 1;
+      let promedio = parseInt((primer + segundo + final) / 3);
+      arrayMaterias.push(
+      nombre,
+        primer,
+        segundo,
+        final,
+        promedio
+        
+      );
+      alumno.materia.push(arrayMaterias)
     }
-  let numMateria = Math.floor(Math.random()*8);
-  if(materiaExistente.includes(materiasPrimaria[numMateria])){
-    i--
-  }else{
-    materiaExistente.push(materiasPrimaria[numMateria]);
-    arrayMaterias.push(materiasPrimaria[numMateria]);
-    let primer = (Math.floor(Math.random() * 10) + 1);
-    let segundo = (Math.floor(Math.random() * 10) + 1);
-    let final = (Math.floor(Math.random() * 10) + 1);
-    let promedio = parseInt((primer + segundo + final) / 3);
-    arrayMaterias.push(primer,segundo,final,promedio)
-    alumno.materia.push(arrayMaterias)
+    
   }
-  }
-}
+  
 
 
   const materiasSecundaria = [
@@ -267,17 +268,16 @@ function primariaMaterias(){
       case 1 :{
         //especialidad Desarrollo
         for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
           let materiaExistente = [];
-          if(arrayMaterias.length !== 5){
+          if(arrayMaterias.length > 5){
             arrayMaterias.splice(0);
           }
           arrayMaterias.push(superior[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*5);
-          if(materiaExistente.includes(Desarrollo[numMateria])){
-            i--
+          if(materiaExistente.includes(Desarrollo[i])){
           }else{
-            materiaExistente.push(Desarrollo[numMateria]);
-            arrayMaterias.push(Desarrollo[numMateria]);
+            materiaExistente.push(Desarrollo[i]);
+            arrayMaterias.push(Desarrollo[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -292,17 +292,17 @@ function primariaMaterias(){
       case 2:{
        //especialidad Telecomunicaciones 
         for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
           let materiaExistente = [];
           if(arrayMaterias.length > 5){
             arrayMaterias.splice(0);
           }
           arrayMaterias.push(superior[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*5);
-          if(materiaExistente.includes(Telecomunicaciones[numMateria])){
+          if(materiaExistente.includes(Telecomunicaciones[i])){
             i--
           }else{
-            materiaExistente.push(Telecomunicaciones[numMateria]);
-            arrayMaterias.push(Telecomunicaciones[numMateria]);
+            materiaExistente.push(Telecomunicaciones[i]);
+            arrayMaterias.push(Telecomunicaciones[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -317,18 +317,16 @@ function primariaMaterias(){
       case 3:{
         //especialidad Ingenieria Industrial
         for(let i = 0; i < 5;i++){
-
+          let arrayMaterias = []
           let materiaExistente = [];
           if(arrayMaterias.length > 5){
             arrayMaterias.splice(0);
           }
           arrayMaterias.push(superior[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*5);
-          if(materiaExistente.includes(IngenieriaIndustrial[numMateria])){
-            i--
+          if(materiaExistente.includes(IngenieriaIndustrial[i])){
           }else{
-            materiaExistente.push(IngenieriaIndustrial[numMateria]);
-            arrayMaterias.push(IngenieriaIndustrial[numMateria]);
+            materiaExistente.push(IngenieriaIndustrial[i]);
+            arrayMaterias.push(IngenieriaIndustrial[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -343,17 +341,17 @@ function primariaMaterias(){
       case 4:{
         //Especialidad Comercio Internacional
         for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
           let materiaExistente = [];
           if(arrayMaterias.length > 5){
             arrayMaterias.splice(0);
           }
           arrayMaterias.push(superior[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*5);
-          if(materiaExistente.includes(materiasLocutorIntegral[numMateria])){
+          if(materiaExistente.includes(materiasLocutorIntegral[i])){
             i--
           }else{
-            materiaExistente.push(materiasLocutorIntegral[numMateria]);
-            arrayMaterias.push(materiasLocutorIntegral[numMateria]);
+            materiaExistente.push(materiasLocutorIntegral[i]);
+            arrayMaterias.push(materiasLocutorIntegral[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -368,17 +366,17 @@ function primariaMaterias(){
       case 5:{
         //Materias Contabilidad
         for(let i = 0; i < 5;i++){
+          let arrayMaterias = []
           let materiaExistente = [];
           if(arrayMaterias.length > 5){
             arrayMaterias.splice(0);
           }
           arrayMaterias.push(superior[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*5);
-          if(materiaExistente.includes(materiasOperadorTecnico[numMateria])){
+          if(materiaExistente.includes(materiasOperadorTecnico[i])){
             i--
           }else{
-            materiaExistente.push(materiasOperadorTecnico[numMateria]);
-            arrayMaterias.push(materiasOperadorTecnico[numMateria]);
+            materiaExistente.push(materiasOperadorTecnico[i]);
+            arrayMaterias.push(materiasOperadorTecnico[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -563,16 +561,12 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
         for(let i = 0; i < 5;i++){
           let arrayMaterias = []
           let materiaExistente = [];
-          if(arrayMaterias.length > 5){
-            arrayMaterias.splice(0)
-          }
+          if(arrayMaterias.length > 5){}
           arrayMaterias.push(especialidad[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*8);
-          if(materiaExistente.includes(comunicacionArteYdiseño[numMateria])){
-            i--
+          if(materiaExistente.includes(comunicacionArteYdiseño[i])){
           }else{
-            materiaExistente.push(comunicacionArteYdiseño[numMateria]);
-            arrayMaterias.push(comunicacionArteYdiseño[numMateria]);
+            materiaExistente.push(comunicacionArteYdiseño[i]);
+            arrayMaterias.push(comunicacionArteYdiseño[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -589,16 +583,11 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
         for(let i = 0; i < 5;i++){
           let arrayMaterias = []
           let materiaExistente = [];
-          if(arrayMaterias.length > 5){
-            arrayMaterias.splice(0)
-          }
           arrayMaterias.push(especialidad[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*8);
-          if(materiaExistente.includes(maestroMayorDeObras[numMateria])){
-            i--
+          if(materiaExistente.includes(maestroMayorDeObras[i])){
           }else{
-            materiaExistente.push(maestroMayorDeObras[numMateria]);
-            arrayMaterias.push(maestroMayorDeObras[numMateria]);
+            materiaExistente.push(maestroMayorDeObras[i]);
+            arrayMaterias.push(maestroMayorDeObras[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -615,16 +604,11 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
         for(let i = 0; i < 5;i++){
           let arrayMaterias = []
           let materiaExistente = [];
-          if(arrayMaterias.length > 5){
-            arrayMaterias.splice(0)
-          }
           arrayMaterias.push(especialidad[especialidadElegida]);
-          let numMateria = Math.floor(Math.random()*8);
-          if(materiaExistente.includes(tecnicoEnInformaticaProfesionalYpersonal[numMateria])){
-            i--
+          if(materiaExistente.includes(tecnicoEnInformaticaProfesionalYpersonal[i])){
           }else{
-            materiaExistente.push(tecnicoEnInformaticaProfesionalYpersonal[numMateria]);
-            arrayMaterias.push(tecnicoEnInformaticaProfesionalYpersonal[numMateria]);
+            materiaExistente.push(tecnicoEnInformaticaProfesionalYpersonal[i]);
+            arrayMaterias.push(tecnicoEnInformaticaProfesionalYpersonal[i]);
             let primer = (Math.floor(Math.random() * 10) + 1);
             let segundo = (Math.floor(Math.random() * 10) + 1);
             let final = (Math.floor(Math.random() * 10) + 1);
@@ -715,6 +699,7 @@ const institucionesSuperior = [
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date('2023-03-03');
+          alumno.materia = [];
           alumno.materia.push(primariaMaterias());
           alumno.materia.pop()
           alumno.tutor = [{
@@ -735,6 +720,7 @@ const institucionesSuperior = [
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date('2023-03-03');
+          alumno.materia = [];
           alumno.materia.push(secundariaMaterias());
           alumno.materia.pop()
           alumno.tutor = [{
@@ -754,6 +740,7 @@ const institucionesSuperior = [
             alumno.domicilio.Casa = Math.floor(Math.random()*200)
             alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
             alumno.fechaIngreso = new Date('2023-03-03');
+            alumno.materia = [];
             alumno.materia.push(superiorMaterias());
             alumno.materia.pop()
             if(alumno.materia.includes('Desarrollo de Software' || 'Telecomunicaciones' || "Ingenieria Industrial")){

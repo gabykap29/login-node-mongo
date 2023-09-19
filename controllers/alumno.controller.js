@@ -7,8 +7,9 @@ export const alumnoCtrl = {};
  alumnoCtrl.crear = async (req,res) =>{
 
     try {
-        for(let i = 0; i<5;i++){
+        for(let i = 0; i<200;i++){
             let alumno = crearAlumno();
+            console.log(alumno);
             const alumnoNuevo = new Alumno (alumno)
             if(!alumnoNuevo){
                 throw({
