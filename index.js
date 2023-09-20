@@ -1,11 +1,10 @@
 import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
-import dotenv from 'dotenv';
 import fs from 'fs';
 import { connectDB } from './database/db.js';
 import router from './routes/router.js';
-dotenv.config();
+
 
 const index = express();
 //constante con el directorio de los logs
