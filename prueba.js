@@ -1,3 +1,7 @@
+import { generarPri } from "./middlewares/funtionPri.js";
+import { generarSec } from "./middlewares/funtionsSec.js";
+
+
 let nombresHombres = [
     "Juan",
     "Carlos",
@@ -156,16 +160,6 @@ let nombresHombres = [
   
   function primariaMaterias() {
 
-    let materiasPrimaria = [
-      "Lengua y literatura",
-      "Matemáticas",
-      "Ciencias Sociales",
-      "Ciencias Naturales",
-      "Educación Artística",
-      "Educación Física",
-      "Educación Tecnológica",
-      "Formación Ética y Ciudadana"
-    ]
     let arrayMaterias = []
     for (let i = 0; i < 5; i++) {
       if(arrayMaterias.length =5){
@@ -191,28 +185,6 @@ let nombresHombres = [
   
 
 
-  const materiasSecundaria = [
-  "Lengua",
-  "Matemática",
-  "Lengua Extranjera",
-  "Educación Física",
-  "Lenguaje musical",
-  "Lenguaje artístico combinado",
-  "Biología I",
-  "Biología II",
-  "Biología III",
-  "Ciencias Físico-Química I",
-  "Ciencias Físico-Química II",
-  "Ciencias Físico-Química III",
-  "Historia I", 
-  "Historia II",
-  "Historia III",
-  "Geografía I",
-  "Geografía II",
-  "Geografía III",
-  "Tecnología",
-  "Formación ética y ciudadana"
-  ]
   const superior = [
     null,
     "Desarrollo de Software",
@@ -420,47 +392,6 @@ let nombresHombres = [
     4: [56000000, 56555555],
   };
 
-
-
-const comunicacionArteYdiseño = [
-    "Introducción al Diseño Gráfico",
-    "Teoría de la Comunicación",
-    "Fundamentos del Arte y la Estética",
-    "Diseño de Comunicación Visual",
-    "Fotografía y Comunicación Visual",
-    "Medios Digitales y Diseño Interactivo",
-    "Ilustración y Técnicas de Dibujo",
-    "Diseño de Medios Impresos",
-    "Diseño de Identidad Corporativa",
-    "Diseño de Packaging y Envases"
-]
-
-
-const maestroMayorDeObras = [
-    "Construcción y Tecnología de Materiales",
-    "Planificación y Programación de Obras",
-    "Normativas y Regulaciones en la Construcción",
-    "Gestión de Proyectos de Construcción",
-    "Interpretación de Planos y Diseños Arquitectónicos",
-    "Topografía y Nivelación",
-    "Control de Costos y Presupuestos de Obras",
-    "Seguridad en la Construcción",
-    "Dirección de Equipos y Trabajadores de Obra",
-    "Sistemas de Instalaciones en la Construcción (Electricidad, Plomería)"
-]
-
-const tecnicoEnInformaticaProfesionalYpersonal = [
-    "Fundamentos de la Informática",
-    "Programación y Desarrollo de Software",
-    "Redes de Computadoras",
-    "Sistemas Operativos",
-    "Administración de Bases de Datos",
-    "Seguridad Informática",
-    "Diseño y Desarrollo Web",
-    "Soporte Técnico y Mantenimiento de Hardware",
-    "Introducción a la Inteligencia Artificial",
-    "Ética y Legislación en Tecnología de la Información"
-]
   
   let codNivelEducativo = [{inicial:101},{primaria:102},{secundaria:110},{superior:115}];
   
@@ -501,7 +432,7 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
     },
     nacionalidad:"",
     fechaIngreso:"",
-    materia:[],
+    materia: "",
     tutor:"",
     cicloLectivo:""
   }
@@ -547,81 +478,26 @@ const tecnicoEnInformaticaProfesionalYpersonal = [
     return fechaAleatoria;
   }
   
-  let especialidad = [null,"comunicacionArteYdiseño",
+  let especialidadSec = [null,"comunicacionArteYdiseño",
     "maestroMayorDeObras",
     "tecnicoEnInformaticaProfesionalYpersonal"]
   
 
- 
-  function secundariaMaterias(){
-    let especialidadElegida = Math.floor(Math.random()*3)+1;
-    switch(especialidadElegida){
-      case 1 :{
-        //especialidad comunicacionArteYdiseño
-        for(let i = 0; i < 5;i++){
-          let arrayMaterias = []
-          let materiaExistente = [];
-          if(arrayMaterias.length > 5){}
-          arrayMaterias.push(especialidad[especialidadElegida]);
-          if(materiaExistente.includes(comunicacionArteYdiseño[i])){
-          }else{
-            materiaExistente.push(comunicacionArteYdiseño[i]);
-            arrayMaterias.push(comunicacionArteYdiseño[i]);
-            let primer = (Math.floor(Math.random() * 10) + 1);
-            let segundo = (Math.floor(Math.random() * 10) + 1);
-            let final = (Math.floor(Math.random() * 10) + 1);
-            let promedio = parseInt((primer + segundo + final) / 3);
-            arrayMaterias.push(primer,segundo,final,promedio)
-            alumno.materia.push(arrayMaterias)
-          }
-          }
-          console.log('Se ejecutó esto 1');
-          break
-      }
-      case 2:{
-       //especialidad maestroMayorDeObras 
-        for(let i = 0; i < 5;i++){
-          let arrayMaterias = []
-          let materiaExistente = [];
-          arrayMaterias.push(especialidad[especialidadElegida]);
-          if(materiaExistente.includes(maestroMayorDeObras[i])){
-          }else{
-            materiaExistente.push(maestroMayorDeObras[i]);
-            arrayMaterias.push(maestroMayorDeObras[i]);
-            let primer = (Math.floor(Math.random() * 10) + 1);
-            let segundo = (Math.floor(Math.random() * 10) + 1);
-            let final = (Math.floor(Math.random() * 10) + 1);
-            let promedio = parseInt((primer + segundo + final) / 3);
-            arrayMaterias.push(primer,segundo,final,promedio)
-            alumno.materia.push(arrayMaterias)
-          }
-          }
-          console.log('Se ejecutó esto 2');
-          break;
-      } 
-      case 3:{
-        //especialidad tecnicoEnInformaticaProfesionalYpersonal
-        for(let i = 0; i < 5;i++){
-          let arrayMaterias = []
-          let materiaExistente = [];
-          arrayMaterias.push(especialidad[especialidadElegida]);
-          if(materiaExistente.includes(tecnicoEnInformaticaProfesionalYpersonal[i])){
-          }else{
-            materiaExistente.push(tecnicoEnInformaticaProfesionalYpersonal[i]);
-            arrayMaterias.push(tecnicoEnInformaticaProfesionalYpersonal[i]);
-            let primer = (Math.floor(Math.random() * 10) + 1);
-            let segundo = (Math.floor(Math.random() * 10) + 1);
-            let final = (Math.floor(Math.random() * 10) + 1);
-            let promedio = parseInt((primer + segundo + final) / 3);
-            arrayMaterias.push(primer,segundo,final,promedio)
-            alumno.materia.push(arrayMaterias)
-          }
-          }
-          console.log('Se ejecutó esto 3');
-          break;
-      }
-    }
+
+  function secundariaMaterias() {
+    let trimestre = 1;
+    let arrayMaterias = [];
+    let materiaExistente = [];
+  
+    // Generar un número random para la especialidad
+    const especialidad = Math.floor(Math.random() * 3) + 1;
+  
+    return {
+      materias: arrayMaterias,
+      promedio: arrayMaterias.reduce((sum, materia1) => sum + materia1[4], 0) / arrayMaterias.length,
+    };
   }
+  
 
   const institucionesJardin = [
       'JARDIN DE INFANTES SAN  MIGUEL ANEXO 1',
@@ -664,7 +540,7 @@ const institucionesSuperior = [
 
 
 
-  export function crearAlumno(){
+  export  function crearAlumno(){
       let num = Math.floor(Math.random()*4);
       alumno.codNivelEducativo = codNivelEducativo[num];
       alumno.nombre = nombresHombres[Math.floor(Math.random()*49)];
@@ -700,9 +576,9 @@ const institucionesSuperior = [
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date('2023-03-03');
-          alumno.materia = [];
-          alumno.materia.push(primariaMaterias());
-          alumno.materia.pop()
+
+          alumno.materia = (generarPri());
+
           alumno.tutor = [{
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,
@@ -721,9 +597,7 @@ const institucionesSuperior = [
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date('2023-03-03');
-          alumno.materia = [];
-          alumno.materia.push(secundariaMaterias());
-          alumno.materia.pop()
+          alumno.materia = (generarSec());
           alumno.tutor = [{
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,

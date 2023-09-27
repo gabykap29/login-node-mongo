@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config('../env');
 
-const MONGODBURL = 'mongodb://127.0.0.1:27017/Padron';
+const MONGODBURL = 'mongodb://127.0.0.1:27017/testeo';
 
 
 export const connectDB = async ()=>{

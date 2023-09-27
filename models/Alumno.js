@@ -36,7 +36,7 @@ const alumnoSchema = new Schema({
         type:[]
     },
     materia:{
-        type:[]
+        type:{}
     },
     tutor:{
         type:[],
