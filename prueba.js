@@ -536,9 +536,9 @@ const institucionesSuperior = [
     'INSTITUTO SUPERIOR DEL PROFESORADO DE ARTE DE FORMOSA (ISPAF)',
   ]
 
-
-
-
+const cicloLectivo = [
+  "2023","2022","2021","2020","2019"
+]
 
   export  function crearAlumno(){
       let num = Math.floor(Math.random()*4);
@@ -547,6 +547,7 @@ const institucionesSuperior = [
       alumno.apellido = apellidos[Math.floor(Math.random()*49)];
       switch(num){
         case 0:{
+          alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
           let edad = Math.floor(Math.random()*2 ) + 4;
           alumno.escuela = institucionesJardin[Math.floor(Math.random()*2)]
           alumno.edad = edad;
@@ -556,16 +557,16 @@ const institucionesSuperior = [
           alumno.domicilio.Mz = Math.floor(Math.random()*300)
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
-          alumno.fechaIngreso = new Date('2023-03-03');
+          alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
           alumno.materia = [];
           alumno.tutor = [{
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,
           }];
-          alumno.cicloLectivo = '2023'
           break;
         }
           case 1:{
+            alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 7) + 6;
           alumno.escuela = institucionesPrimaria[Math.floor(Math.random()*9)]
           alumno.edad = edad;
@@ -575,7 +576,7 @@ const institucionesSuperior = [
           alumno.domicilio.Mz = Math.floor(Math.random()*300)
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
-          alumno.fechaIngreso = new Date('2023-03-03');
+          alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
 
           alumno.materia = (generarPri());
 
@@ -583,10 +584,10 @@ const institucionesSuperior = [
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,
           }];
-          alumno.cicloLectivo = '2023'
           break;
           }
           case 2:{
+            alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 7) + 12;
           alumno.escuela = institucionesSecundaria[Math.floor(Math.random()*9)];
           alumno.edad = edad;
@@ -596,16 +597,16 @@ const institucionesSuperior = [
           alumno.domicilio.Mz = Math.floor(Math.random()*300)
           alumno.domicilio.Casa = Math.floor(Math.random()*200)
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
-          alumno.fechaIngreso = new Date('2023-03-03');
+          alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
           alumno.materia = (generarSec());
           alumno.tutor = [{
             nombre: nombresHombres[Math.floor(Math.random()*49)],
             apellido: alumno.apellido,
           }];
-          alumno.cicloLectivo = '2023'
           break;
           }
           case 3:{
+            alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 9) + 19;
             alumno.edad = edad;
             alumno.dni = generarDNI(edad);
@@ -614,7 +615,7 @@ const institucionesSuperior = [
             alumno.domicilio.Mz = Math.floor(Math.random()*300)
             alumno.domicilio.Casa = Math.floor(Math.random()*200)
             alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
-            alumno.fechaIngreso = new Date('2023-03-03');
+            alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
             alumno.materia = [];
             alumno.materia.push(superiorMaterias());
             alumno.materia.pop()
@@ -627,7 +628,6 @@ const institucionesSuperior = [
               nombre: nombresHombres[Math.floor(Math.random()*49)],
               apellido: alumno.apellido,
             }];
-            alumno.cicloLectivo = '2023'
             break;
           }
       }

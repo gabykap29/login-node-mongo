@@ -49,16 +49,30 @@ const generarTrimestres = (materias) => {
   };
   
 
-
+  const calcularPromedioFinal = (trimestres) => {
+    let suma = 0;
+    let cantidadMaterias = 0;
+    if (!Array.isArray(trimestres)) {
+      // Convertir trimestres a un arreglo
+      trimestres = Object.values(trimestres);
+    }
+    for (const trimestre of trimestres) {
+      suma += trimestre.promedio;
+      cantidadMaterias++;
+    }
+  
+    return parseInt(suma / cantidadMaterias);
+  };
 
 
 
 export const generarPri =  ()=>{
-    
+            let trimestre3 = generarTrimestres(materiasPrimaria)
             let materias =  {
                 trimestre1: generarTrimestres(materiasPrimaria),
                 trimestre2: generarTrimestres(materiasPrimaria),
-                trimestre3: generarTrimestres(materiasPrimaria)
+                trimestre3: trimestre3,
+                promedioFinal: calcularPromedioFinal(trimestre3)
             }
             return materias;
 };

@@ -613,7 +613,7 @@ const sumarNotas = (notas)=> {
 
 const generarTrimestres = (materias) => {
     const trimestres = {};
-    
+    let promedioFinal=0;
     // Obtener una cantidad aleatoria constante de materias
     const cantidadMaterias = Math.floor(Math.random() * (materias.length + 1));
     const materiasSeleccionadas = materias.slice(0, cantidadMaterias);
@@ -621,17 +621,30 @@ const generarTrimestres = (materias) => {
     for (let materia of materiasSeleccionadas) {
       const notas = generarNotas(materia);
       const promedio = parseInt(sumarNotas(notas) / notas.length);
-  
+      promedioFinal += promedio;
       trimestres[materia.espacio] = {
         notas,
-        promedio
+        promedio,
       };
     }
   
     return trimestres;
   };
   
-
+  const calcularPromedioFinal = (trimestres) => {
+    let suma = 0;
+    let cantidadMaterias = 0;
+    if (!Array.isArray(trimestres)) {
+      // Convertir trimestres a un arreglo
+      trimestres = Object.values(trimestres);
+    }
+    for (const trimestre of trimestres) {
+      suma += trimestre.promedio;
+      cantidadMaterias++;
+    }
+  
+    return parseInt(suma / cantidadMaterias);
+  };
 
 
 
@@ -642,26 +655,32 @@ export const generarSec =  ()=>{
     
       switch(materiaElegida){
         case 1:{
+          let trimestre3 = generarTrimestres(comunicacionArteYdiseño)
             let materias =  {
                 trimestre1: generarTrimestres(comunicacionArteYdiseño),
                 trimestre2: generarTrimestres(comunicacionArteYdiseño),
-                trimestre3: generarTrimestres(comunicacionArteYdiseño)
+                trimestre3: trimestre3,
+                promedioFinal: calcularPromedioFinal(trimestre3)
             }
             return materias;
         }
         case 2:{
+            let trimestre3 = generarTrimestres(comunicacionArteYdiseño);
             let materias = {
                 trimestre1:generarTrimestres(maestroMayorDeObras),
                 trimestre2:generarTrimestres(maestroMayorDeObras),
-                trimestre3:generarTrimestres(maestroMayorDeObras)
+                trimestre3:trimestre3,
+                promedioFinal: calcularPromedioFinal(trimestre3)
             }
             return materias;
         };
         default:{
+            let trimestre3 = generarTrimestres(comunicacionArteYdiseño);
             let materias = {
                 trimestre1:generarTrimestres(tecnicoEnInformaticaProfesionalYpersonal),
                 trimestre2:generarTrimestres(tecnicoEnInformaticaProfesionalYpersonal),
-                trimestre3:generarTrimestres(tecnicoEnInformaticaProfesionalYpersonal),
+                trimestre3:trimestre3,
+                promedioFinal: calcularPromedioFinal(trimestre3)
             }
             return materias;
         }
