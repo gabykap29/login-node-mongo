@@ -5,6 +5,10 @@ const alumnoSchema = new Schema({
     escuela: {
         type: String
     },
+    grado:{
+        type:String,
+        default: ""
+    },
     codNivelEducativo:{type:[]},
     nombre:{
         type:String,

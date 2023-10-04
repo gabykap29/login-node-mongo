@@ -421,6 +421,7 @@ let nombresHombres = [
   
   const alumno = {
     escuela:"",
+    grado:"",
     codNivelEducativo:"",
     nombre:"",
     apellido:"",
@@ -549,6 +550,7 @@ const cicloLectivo = [
         case 0:{
           alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
           let edad = Math.floor(Math.random()*2 ) + 4;
+          alumno.grado="";
           alumno.escuela = institucionesJardin[Math.floor(Math.random()*2)]
           alumno.edad = edad;
           alumno.dni = generarDNI(edad);
@@ -569,6 +571,7 @@ const cicloLectivo = [
             alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 7) + 6;
           alumno.escuela = institucionesPrimaria[Math.floor(Math.random()*9)]
+          alumno.grado = Math.floor(Math.random()*6)+1;
           alumno.edad = edad;
           alumno.dni = generarDNI(edad);
           alumno.fechaNac = fechaAleatoriaPrimaria();
@@ -590,6 +593,7 @@ const cicloLectivo = [
             alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 7) + 12;
           alumno.escuela = institucionesSecundaria[Math.floor(Math.random()*9)];
+          alumno.grado = Math.floor(Math.random()*7)+1;
           alumno.edad = edad;
           alumno.dni = generarDNI(edad);
           alumno.fechaNac = fechaAleatoriaSecundaria();
@@ -607,7 +611,9 @@ const cicloLectivo = [
           }
           case 3:{
             alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
+            alumno.grado=Math.floor(Math.random()*2)+1;
             let edad = Math.floor(Math.random() * 9) + 19;
+
             alumno.edad = edad;
             alumno.dni = generarDNI(edad);
             alumno.fechaNac = fechaAleatoriaSuperior();
@@ -619,7 +625,7 @@ const cicloLectivo = [
             alumno.materia = [];
             alumno.materia.push(superiorMaterias());
             alumno.materia.pop()
-            if(alumno.materia.includes('Desarrollo de Software' || 'Telecomunicaciones' || "Ingenieria Industrial")){
+            if(alumno.materia[0][0].includes('Desarrollo de Software' || 'Telecomunicaciones' || "Ingenieria Industrial")){
               alumno.escuela = institucionesSuperior[0];
             }else{
               alumno.escuela = institucionesSuperior[1];
@@ -634,4 +640,3 @@ const cicloLectivo = [
       return alumno;
   } 
 
-console.log(alumno);

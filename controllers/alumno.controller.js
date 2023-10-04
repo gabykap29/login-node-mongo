@@ -7,7 +7,7 @@ export const alumnoCtrl = {};
  alumnoCtrl.crear = async (req,res) =>{
 
     try {
-        for(let i = 0; i<10000;i++){
+        for(let i = 0; i<10;i++){
             let alumno = crearAlumno();
             console.log(alumno);
             const alumnoNuevo = new Alumno (alumno)
