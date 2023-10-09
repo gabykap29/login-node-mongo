@@ -421,6 +421,8 @@ let nombresHombres = [
   
   const alumno = {
     escuela:"",
+    departamento:"",
+    localidad: "",
     grado:"",
     codNivelEducativo:"",
     nombre:"",
@@ -550,6 +552,8 @@ const cicloLectivo = [
         case 0:{
           alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
           let edad = Math.floor(Math.random()*2 ) + 4;
+          alumno.departamento="Formosa";
+          alumno.localidad="Formosa";
           alumno.grado="";
           alumno.escuela = institucionesJardin[Math.floor(Math.random()*2)]
           alumno.edad = edad;
@@ -571,6 +575,8 @@ const cicloLectivo = [
             alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 7) + 6;
           alumno.escuela = institucionesPrimaria[Math.floor(Math.random()*9)]
+          alumno.departamento = (alumno.escuela == "EPEP Nº 303 ANEXO 2 (EX EPEP Nº 370)") ? alumno.departamento = "Pirane" : alumno.departamento = "Formosa";
+          alumno.localidad = (alumno.departamento == "Pirane") ? "Mariano Boedo":alumno.localidad = "Formosa";
           alumno.grado = Math.floor(Math.random()*6)+1;
           alumno.edad = edad;
           alumno.dni = generarDNI(edad);
@@ -593,6 +599,8 @@ const cicloLectivo = [
             alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             let edad = Math.floor(Math.random() * 7) + 12;
           alumno.escuela = institucionesSecundaria[Math.floor(Math.random()*9)];
+          alumno.departamento = ("EPES AGRARIA Nº2-EPEP Nº 303") ? alumno.departamento = "Pirane" : alumno.departamento = "Formosa";
+          alumno.localidad = (alumno.departamento == "Pirane") ? "Mariano Boedo":alumno.localidad = "Formosa";
           alumno.grado = Math.floor(Math.random()*7)+1;
           alumno.edad = edad;
           alumno.dni = generarDNI(edad);
@@ -613,7 +621,8 @@ const cicloLectivo = [
             alumno.cicloLectivo = cicloLectivo[Math.floor(Math.random()*4)]
             alumno.grado=Math.floor(Math.random()*2)+1;
             let edad = Math.floor(Math.random() * 9) + 19;
-
+            alumno.departamento="Formosa";
+            alumno.localidad="Formosa";
             alumno.edad = edad;
             alumno.dni = generarDNI(edad);
             alumno.fechaNac = fechaAleatoriaSuperior();

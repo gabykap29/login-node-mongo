@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config('../env');
 
-const MONGODBURL = 'mongodb+srv://gabriacos:1234@cluster0.bprjpuq.mongodb.net/';
+const MONGODBURL = 'mongodb://127.0.0.1:27017/alumnos';
 
 
 export const connectDB = async ()=>{
