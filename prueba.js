@@ -1,5 +1,6 @@
 import { generarPri } from "./middlewares/funtionPri.js";
 import { generarSec } from "./middlewares/funtionsSec.js";
+import Alumno from "./models/Alumno.js";
 
 
 let nombresHombres = [
@@ -398,8 +399,9 @@ let nombresHombres = [
   let barriosFormosa = [
     "San Juan",
     "Santa Rosa",
+    "Guadalupe",
     "Los Pájaros",
-    "Villa Esperanza",
+    "San Martin",
     "La Candelaria",
     "San Martín",
     "San Antonio",
@@ -411,10 +413,10 @@ let nombresHombres = [
     "La Victoria",
     "Villa Hermosa",
     "Las Acacias",
-    "El Bosque",
-    "La Rosada",
-    "Los Alamos",
-    "El Paraíso",
+    "Ibirapita",
+    "Juan Manuel de Rosas",
+    "Lote 111",
+    "Lote 110",
     "San Francisco"
   ];
   
@@ -560,8 +562,16 @@ const cicloLectivo = [
           alumno.dni = generarDNI(edad);
           alumno.fechaNac = fechaAleatoriaJardin();
           alumno.domicilio.Barrio = barriosFormosa[Math.floor(Math.random()*20)];
-          alumno.domicilio.Mz = Math.floor(Math.random()*300)
-          alumno.domicilio.Casa = Math.floor(Math.random()*200)
+          if(alumno.domicilio.Barrio=='Guadalupe'){
+            let Depto = ['A','B','C'];
+            let casa = Depto[Math.floor(Math.random()*4)+1];
+            alumno.domicilio.Casa = `Depto ${casa}`;
+            let numTorre = Math.floor(Math.random()*350)+1;
+            alumno.Mz= `Torre ${numTorre}`
+          }else{
+            alumno.domicilio.Mz = Math.floor(Math.random()*300);
+            alumno.domicilio.Casa = Math.floor(Math.random()*200);
+          };
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
           alumno.materia = [];
@@ -581,9 +591,16 @@ const cicloLectivo = [
           alumno.edad = edad;
           alumno.dni = generarDNI(edad);
           alumno.fechaNac = fechaAleatoriaPrimaria();
-          alumno.domicilio.Barrio = barriosFormosa[Math.floor(Math.random()*20)];
-          alumno.domicilio.Mz = Math.floor(Math.random()*300)
-          alumno.domicilio.Casa = Math.floor(Math.random()*200)
+          if(alumno.domicilio.Barrio=='Guadalupe'){
+            let Depto = ['A','B','C','D'];
+            let casa = Depto[Math.floor(Math.random()*4)+1];
+            alumno.domicilio.Casa = `Depto ${casa}`;
+            let numTorre = Math.floor(Math.random()*350)+1;
+            alumno.Mz= `Torre ${numTorre}`
+          }else{
+            alumno.domicilio.Mz = Math.floor(Math.random()*300);
+            alumno.domicilio.Casa = Math.floor(Math.random()*200);
+          };
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
 
@@ -606,8 +623,16 @@ const cicloLectivo = [
           alumno.dni = generarDNI(edad);
           alumno.fechaNac = fechaAleatoriaSecundaria();
           alumno.domicilio.Barrio = barriosFormosa[Math.floor(Math.random()*20)];
-          alumno.domicilio.Mz = Math.floor(Math.random()*300)
-          alumno.domicilio.Casa = Math.floor(Math.random()*200)
+          if(alumno.domicilio.Barrio=='Guadalupe'){
+            let Depto = ['A','B','C'];
+            let casa = Depto[Math.floor(Math.random()*4)+1];
+            alumno.domicilio.Casa = `Depto ${casa}`;
+            let numTorre = Math.floor(Math.random()*350)+1;
+            alumno.Mz= `Torre ${numTorre}`
+          }else{
+            alumno.domicilio.Mz = Math.floor(Math.random()*300);
+            alumno.domicilio.Casa = Math.floor(Math.random()*200);
+          };
           alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
           alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
           alumno.materia = (generarSec());
@@ -627,8 +652,17 @@ const cicloLectivo = [
             alumno.dni = generarDNI(edad);
             alumno.fechaNac = fechaAleatoriaSuperior();
             alumno.domicilio.Barrio = barriosFormosa[Math.floor(Math.random()*20)];
-            alumno.domicilio.Mz = Math.floor(Math.random()*300)
-            alumno.domicilio.Casa = Math.floor(Math.random()*200)
+            if(alumno.domicilio.Barrio=='Guadalupe'){
+              let Depto = ['A','B','C'];
+              let casa = Depto[Math.floor(Math.random()*4)+1];
+              alumno.domicilio.Casa = `Depto ${casa}`;
+              let numTorre = Math.floor(Math.random()*350)+1;
+              let numCalle = Math.floor(Math.random()*1000)+1
+              alumno.Mz= `Calle: Territorios Nacionales ${numCalle} Torre N° ${numTorre}`
+            }else{
+              alumno.domicilio.Mz = Math.floor(Math.random()*300);
+              alumno.domicilio.Casa = Math.floor(Math.random()*200);
+            };
             alumno.nacionalidad = nacionalidad[Math.floor(Math.random()*2)];
             alumno.fechaIngreso = new Date(`${alumno.cicloLectivo}-03-03`);
             alumno.materia = [];
